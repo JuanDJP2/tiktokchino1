@@ -1,6 +1,5 @@
 
-
-import 'package:tereturuk/domain/entities/video_post.dart';
+  import 'package:tereturuk/domain/entities/video_post.dart';
 
 class LocalVideoModel {
 

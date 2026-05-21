@@ -6,25 +6,24 @@ import 'package:tereturuk/presentation/discover/discover_screen.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget{
-
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context)
-  return MultiProvider(
-    providers: [
-      ChangeNotifierProvider(
-        lazy: false,
-        create: (_) => DiscoverProviders()..loadNextPage()
-        )
-    ],
-    child: MaterialApp(
-      title: 'tereturuk',
-      theme: Apptheme().getTheme(),
-      debugShowCheckedModeBanner: false,
-      home: discover_screen()
-    ),
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider( 
+          lazy: false,
+          create: (_) => DiscoverProvider()..loadNextPage() 
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Tereturuk',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().getTheme(),
+        home: const DiscoverScreen()
+      ),
     );
-
+  }
 }
